@@ -1,0 +1,86 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+@section scripts{
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+        var data = {
+            value: 123
+        };
+
+        let app = new Vue({
+            el: '#app',
+            methods: {
+                simpleRequest() {
+                    $.ajax({
+                        url: 'https://localhost:44351/api/v1/simpleRequest',
+                        method: 'post',
+                        //data: $('#myForm').serialize(), //JSON.stringify(data),
+                        contentType: 'application/x-www-form-urlencoded',
+                        success: function(result) {
+                            //alert(result);
+                        },
+                        error: function() {
+                        }
+                    });
+                },
+                normalRequestError() {
+                    $.ajax({
+                        url: 'https://localhost:44351/api/v1/normalRequest/error',
+                        method: 'post',
+                        data: data,
+                        contentType: 'application/json',
+                        success: function(result) {
+                            //alert(result);
+                        },
+                        error: function() {
+                        }
+                    });
+                },
+                normalRequestSuccess() {
+                    $.ajax({
+                        url: 'https://localhost:44351/api/v1/normalRequest/success',
+                        method: 'post',
+                        contentType: 'application/json',
+                        data: JSON.stringify(data),
+                        success: function(result) {
+                            console.log(result);
+                        },
+                        error: function() {
+                        }
+                    });
+                }
+            }
+
+        });
+
+
+    </script>
+}
+
+<div id="app">
+    <div class="jumbotron">
+        <h2>Cross Over Resource Sharing Demo </h2>
+        <p class="lead">This is a project for CORS demo. You can click buttons by following buttons to see what happened to CORS.  </p>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h2>Simple Request</h2>
+            <p>If your request match <a href="https://developer.mozilla.org/zh-TW/docs/Web/HTTP/CORS#%E7%B0%A1%E5%96%AE%E8%AB%8B%E6%B1%82">these</a>, your request will be simple request</p>
+            <p><a class="btn btn-default" @@click="simpleRequest">Try it &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+            <h2> Error response - Simple Request contains Preflight Request</h2>
+            <p>If your request doesn't match <a href="https://developer.mozilla.org/zh-TW/docs/Web/HTTP/CORS#%E7%B0%A1%E5%96%AE%E8%AB%8B%E6%B1%82">these</a>, your request will be normal request. The browser will send a preflight before it sends a normal request. </p>
+            <p>If server don't do anything, browser showed error when it received response. </p>
+            <p><a class="btn btn-default" @@click="normalRequestError">Try it &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+            <h2> Success response - Simple Request contains Preflight Request</h2>
+            <p>If your request doesn't match <a href="https://developer.mozilla.org/zh-TW/docs/Web/HTTP/CORS#%E7%B0%A1%E5%96%AE%E8%AB%8B%E6%B1%82">these</a>, your request will be normal request. The browser will send a preflight before it sends a normal request. </p>
+            <p>If server sets header content with 'Access-Control-Allow-*', the request will be successful. </p>
+            <p><a class="btn btn-default" @@click="normalRequestSuccess">Try it &raquo;</a></p>
+        </div>
+    </div>
+</div>

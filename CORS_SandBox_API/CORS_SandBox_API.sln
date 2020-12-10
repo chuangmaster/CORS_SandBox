@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30104.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CORS_SandBox_API", "CORS_SandBox_API\CORS_SandBox_API.csproj", "{706BF850-E4CF-47C9-ACF3-63AB49F111BE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{706BF850-E4CF-47C9-ACF3-63AB49F111BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{706BF850-E4CF-47C9-ACF3-63AB49F111BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{706BF850-E4CF-47C9-ACF3-63AB49F111BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{706BF850-E4CF-47C9-ACF3-63AB49F111BE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CCC241F2-C3B5-4458-858E-9BF4C4321B7E}
+	EndGlobalSection
+EndGlobal
