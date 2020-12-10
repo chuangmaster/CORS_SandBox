@@ -1,2 +1,2 @@
-# CORS_SandBox
-.NET Web api CORS package sandbox
+# .NET Web api CORS SandBox
+This is a .NET Web api CORS package sandbox
