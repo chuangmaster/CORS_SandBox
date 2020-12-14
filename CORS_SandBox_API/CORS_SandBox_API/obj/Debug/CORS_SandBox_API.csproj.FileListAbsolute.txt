@@ -126,3 +126,4 @@ C:\Users\masterchuang.PAZZO\Desktop\CORS_SandBox\CORS_SandBox_API\CORS_SandBox_A
 C:\Users\masterchuang.PAZZO\Desktop\CORS_SandBox\CORS_SandBox_API\CORS_SandBox_API\bin\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\masterchuang.PAZZO\Desktop\CORS_SandBox\CORS_SandBox_API\CORS_SandBox_API\bin\System.Text.Encodings.Web.xml
 C:\Users\masterchuang.PAZZO\Desktop\CORS_SandBox\CORS_SandBox_API\CORS_SandBox_API\bin\System.Web.Http.Cors.xml
+C:\Users\masterchuang.PAZZO\Desktop\CORS_SandBox\CORS_SandBox_API\CORS_SandBox_API\obj\Debug\CORS_SandBox_API.csprojAssemblyReference.cache
