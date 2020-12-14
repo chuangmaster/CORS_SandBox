@@ -32,10 +32,24 @@ namespace CORS_SandBox_API.Controllers
             return resp;
         }
 
-        [HttpPost]
 
+        // if mark following, you will get 405 error. Because you don't handle Http OPTIONS.
+        [HttpOptions]
+        [Route("~/api/v1/normalRequest/error")]
+        public HttpResponseMessage NormalRequest_error_option()
+        {
+            var resp = Request.CreateResponse(HttpStatusCode.OK, "OK");
+
+            //if mark following, you will get "Response to preflight request doesn't pass access control
+            //check: No 'Access-Control-Allow-Origin' header is present on the requested resource" in actual request
+            //resp.Content.Headers.Add("Access-Control-Allow-Origin", "*");
+            return resp;
+        }
+
+
+        [HttpPost]
         //[CorsHandle]
-        [EnableCors("https://localhost:44354", "*", "POST")]
+        //[EnableCors("https://localhost:44354", "*", "POST")]
         [Route("~/api/v1/normalRequest/success")]
         public HttpResponseMessage NormalRequest_success(NormalRequestParameter parameter)
         {

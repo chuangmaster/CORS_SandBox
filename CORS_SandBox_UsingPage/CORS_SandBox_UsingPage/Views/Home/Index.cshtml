@@ -28,8 +28,8 @@
                     $.ajax({
                         url: 'https://localhost:44351/api/v1/normalRequest/error',
                         method: 'post',
-                        data: data,
                         contentType: 'application/json',
+                        data: JSON.stringify(data),
                         success: function(result) {
                             //alert(result);
                         },
@@ -72,7 +72,7 @@
         </div>
         <div class="col-md-4">
             <h2> Error response - Simple Request contains Preflight Request</h2>
-            <p>If your request doesn't match <a href="https://developer.mozilla.org/zh-TW/docs/Web/HTTP/CORS#%E7%B0%A1%E5%96%AE%E8%AB%8B%E6%B1%82">these</a>, your request will be normal request. The browser will send a preflight before it sends a normal request. </p>
+            <p>If your request doesn't match <a href="https://developer.mozilla.org/zh-TW/docs/Web/HTTP/CORS#%E7%B0%A1%E5%96%AE%E8%AB%8B%E6%B1%82">these</a>, your request will be normal request. Otherwise, browser will send a preflight before it sends a normal request. </p>
             <p>If server don't do anything, browser showed error when it received response. </p>
             <p><a class="btn btn-default" @@click="normalRequestError">Try it &raquo;</a></p>
         </div>
