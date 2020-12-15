@@ -54,16 +54,20 @@ namespace CORS_SandBox_API.Controllers
         }
         #endregion
 
-        
+        #region CORS Nuget tool
+
         [HttpPost]
         //[CorsHandle]
-        //[EnableCors("https://localhost:44354", "*", "POST")]
+        [EnableCors("https://localhost:44354", "Content-Type", "POST")]
         [Route("~/api/v1/normalRequest/success")]
         public HttpResponseMessage NormalRequest_success(NormalRequestParameter parameter)
         {
-            var resp = Request.CreateResponse(HttpStatusCode.OK,"OK");
+            var resp = Request.CreateResponse(HttpStatusCode.OK, "OK");
             return resp;
         }
+
+        #endregion
+
 
         [HttpOptions]
         [Route("~/api/v1/normalRequest/success")]
